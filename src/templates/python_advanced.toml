@@ -1,0 +1,41 @@
+name = "python:advanced"
+
+description = "Python proyect with poetry enviroment and linters"
+
+requires = ["python3", "poetry"]
+
+run = [
+    "poetry init -n",
+    "{% for e in python['dev-dep'] %}poetry add {{e}}@{{ python['dev-dep'][e] }} -D;{% endfor %}"
+]
+
+setup = '''
+# SetUp
+
+Before you start, be sire to have `poetry` in the PATH varianble.
+Also, `pyenv` is recomended to manage the `python3` version for
+the enviroment.
+
+To start, run the following commands:
+
+```bash
+# Create or activate a virtual enviroment
+poetry env use python3
+
+# Install dependencies
+poetry install
+
+# Starts a shell in the enviroment
+poetry shell
+
+# Run the code
+python src/main.py
+```
+'''
+
+[write]
+"src/main.py" =  "print(\"Hello {{repo['name']}}!\")"
+
+[python.dev-dep]
+mypy = "*"
+black = "*"

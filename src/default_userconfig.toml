@@ -1,0 +1,10 @@
+write_setup_help = true
+
+[vcs]
+use = "git"
+
+[write]
+"README.md" = '''
+# {{repo.name}}
+
+'''

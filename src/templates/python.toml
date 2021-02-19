@@ -1,0 +1,36 @@
+name = "python"
+
+description = "Simple python proyect"
+requires = ["python3"]
+
+run = ["python3 -m venv .venv"]
+
+setup = '''
+# Python Enviroment SetUp
+
+Before you start, make sure you have `python3` in the PATH variable.
+
+To setup the proyect, run the following commands in the terminal:
+
+```bash
+# Create the virtual enviroment (if it does not exist)
+python3 -m venv .venv
+
+# Activate the enviroment
+. .env/bin/activate  # On Unix or MacOS
+.venv/bin/activate.bat    # On Windows
+
+# Install the dependencies in the enviroment
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+
+# To exit the virtual enviroment, run
+deactivate
+```
+
+To run the proyect, use `python path/to/file.py`.
+'''
+
+[write]
+"requirements.txt" = ""
+"src/main.py" = "print(\"Hello world!\")\n"
