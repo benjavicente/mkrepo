@@ -8,8 +8,10 @@ Features:
 - Basic user configuration
 - Initialize Git
 - Run multiple commands in creation
-- Write files in every new repository
+- Repositories templates files with [Jinja]
+
+[Jinja]: https://palletsprojects.com/p/jinja/
 
 ## SetUp
 
-TODO
+TODO <!-- bin dir? -->
